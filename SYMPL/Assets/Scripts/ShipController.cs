@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShipController : MonoBehaviour
 {
     
-    public float forwardSpeed = 25f, strafeSpeed = 7.5f, hoverSpeed = 5f;
+    public float forwardSpeed = 25f, strafeSpeed = 7.5f, hoverSpeed = 5f, boostSpeed = 10f;
     private float activeForwardSpeed, activeStrafeSpeed, activeHoverSpeed;
     private float forwardAcceleration = 2.5f, strafeAcceleration = 2f, hoverAcceleration = 2f;
 
@@ -30,6 +30,12 @@ public class ShipController : MonoBehaviour
         mousePosition();
         processMovement();
         processRoll();
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            activeForwardSpeed += boostSpeed;
+        }
+
     }
 
     private void processRoll()

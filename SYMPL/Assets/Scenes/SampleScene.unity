@@ -825,7 +825,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-60028
+  m_Name: pb_Mesh17104
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4492,6 +4492,7 @@ MonoBehaviour:
   forwardSpeed: 50
   strafeSpeed: 25
   hoverSpeed: 10
+  boostSpeed: 5
   lookRotateSpeed: 90
   rollSpeed: 90
   rollAcceleration: 3.5
@@ -5503,7 +5504,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh19108
+  m_Name: pb_Mesh17166
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
