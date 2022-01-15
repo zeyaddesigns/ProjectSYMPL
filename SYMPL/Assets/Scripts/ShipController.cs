@@ -22,6 +22,7 @@ public class ShipController : MonoBehaviour
         screenCenter.y = Screen.height * 0.5f;
 
         Cursor.lockState = CursorLockMode.Confined;
+        Cursor. visible = false;
     }
 
     // Update is called once per frame
@@ -33,7 +34,7 @@ public class ShipController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            activeForwardSpeed += boostSpeed;
+            activeForwardSpeed += boostSpeed * Time.deltaTime;
         }
 
     }
@@ -44,8 +45,8 @@ public class ShipController : MonoBehaviour
 
         transform.Rotate(-mouseDistance.y * lookRotateSpeed * Time.deltaTime, 
                           mouseDistance.x * lookRotateSpeed * Time.deltaTime, 
-                          rollInput * rollSpeed * Time.deltaTime, 
-                          Space.Self);
+                          rollInput * rollSpeed * Time.deltaTime, Space.Self);
+
     }
 
     private void processMovement()
