@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShipController : MonoBehaviour
 {
     
-    public float forwardSpeed = 30f, strafeSpeed = 7.5f, hoverSpeed = 5f, boostSpeed = 10f;
+    public float forwardSpeed = 30f, strafeSpeed = 7.5f, hoverSpeed = 5f, boostSpeed = 10f, mouseFactor = 0.5f;
     private float activeForwardSpeed, activeStrafeSpeed, activeHoverSpeed;
     private float forwardAcceleration = 2.5f, strafeAcceleration = 2f, hoverAcceleration = 2f;
 
@@ -34,7 +34,7 @@ public class ShipController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            activeForwardSpeed += boostSpeed * Time.deltaTime;
+            activeForwardSpeed += boostSpeed * 2 * Time.deltaTime;
         }
 
     }
@@ -70,5 +70,7 @@ public class ShipController : MonoBehaviour
         mouseDistance.y = (lookInput.y - screenCenter.y) / screenCenter.y;
         // Mouse position limits
         mouseDistance = Vector2.ClampMagnitude(mouseDistance, 1f);
+
+        
     }
 }
