@@ -234,10 +234,10 @@ MonoBehaviour:
     min: 0
   baseHeight:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: -2500
   maximumHeight:
     m_OverrideState: 1
-    m_Value: 250
+    m_Value: 500
   meanFreePath:
     m_OverrideState: 1
     m_Value: 1
