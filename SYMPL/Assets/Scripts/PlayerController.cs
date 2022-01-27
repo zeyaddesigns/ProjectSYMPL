@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,15 +11,37 @@ public class PlayerController : MonoBehaviour
                  focalLength, activeFocalLength, boostFocalLength;
     private float activeForward, activeSlide, activeRoll, activePitch, activeYaw;
     public CinemachineVirtualCamera vcam;
+    public GameObject laser;
+    public ParticleSystem laserParticles;
 
     void Update()
     {
         LinearMovement();
         AngularMovement();
         boostIsActive();
+        Shoot();
     }
 
-    private void AngularMovement()
+    void Shoot()
+    {
+        if (Input.GetButton("Shoot"))
+        {
+            SetActiveLaser(true);
+        }
+        else
+        {
+            SetActiveLaser(false);
+        }
+    }
+
+    void SetActiveLaser(bool isActive)
+    {
+       var emissionModule = laserParticles.emission;
+       emissionModule.enabled = isActive;
+    }
+    
+
+    void AngularMovement()
     {
         activePitch = Mathf.Lerp(activePitch, Input.GetAxisRaw("Pitch"), rollAcceleration * Time.deltaTime);
         activeRoll = Mathf.Lerp(activeRoll, Input.GetAxisRaw("Roll"), rollAcceleration * Time.deltaTime);
