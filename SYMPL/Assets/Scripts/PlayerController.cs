@@ -6,13 +6,27 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
-    public float forwardSpeed, forwardAcceleration, slideSpeed, slideAcceleration, 
-                 boostSpeed, pitchSpeed, rollSpeed, yawSpeed, rollAcceleration, 
-                 focalLength, activeFocalLength, boostFocalLength;
-    private float activeForward, activeSlide, activeRoll, activePitch, activeYaw;
+    [Header("Linear Movement")]
+    public float forwardSpeed;
+    public float forwardAcceleration;
+    public float slideSpeed;
+    public float slideAcceleration;
+    public float boostSpeed;
+    [Header("Angular Movement")]
+    public float pitchSpeed;
+    public float rollSpeed;
+    public float yawSpeed; 
+    public float rollAcceleration;
+    [Header("Camera Motion Perspective")]
+    [Tooltip("When static")] public float focalLength;
+    [Tooltip("When moving forward")] public float activeFocalLength; 
+    [Tooltip("When boos is active")] public float boostFocalLength;
+    [Header("References")]
     public CinemachineVirtualCamera vcam;
     public GameObject laser;
     public ParticleSystem laserParticles;
+
+    private float activeForward, activeSlide, activeRoll, activePitch, activeYaw;
 
     void Update()
     {
