@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class CollisionDetection : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     
-    }
-
+    public Rigidbody rb;
+    public PlayerController script;
+    
     void OnCollisionEnter(Collision other) 
         {
-            Debug.Log("Ouch!");
+            if (other.gameObject.tag == "Column")
+            {
+                Debug.Log("ouch!");
+            }
         }
 }

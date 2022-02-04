@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Rocks
+  - Column
   layers:
   - Default
   - TransparentFX

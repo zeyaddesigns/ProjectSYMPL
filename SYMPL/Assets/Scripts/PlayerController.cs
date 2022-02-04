@@ -24,9 +24,10 @@ public class PlayerController : MonoBehaviour
     [Header("References")]
     public CinemachineVirtualCamera vcam;
     public GameObject laser;
+    public GameObject followTarget;
     public ParticleSystem laserParticles;
 
-    private float activeForward, activeSlide, activeRoll, activePitch, activeYaw;
+    private float activeForward, activeSlide, activeRoll, activePitch, activeCameraPitch, activeYaw;
 
     void Update()
     {
@@ -57,12 +58,15 @@ public class PlayerController : MonoBehaviour
 
     void AngularMovement()
     {
-        activePitch = Mathf.Lerp(activePitch, Input.GetAxisRaw("Pitch"), rollAcceleration * Time.deltaTime);
-        activeRoll = Mathf.Lerp(activeRoll, Input.GetAxisRaw("Roll"), rollAcceleration * Time.deltaTime);
+        activePitch = 0f; //Mathf.Lerp(activePitch, Input.GetAxisRaw("Pitch"), rollAcceleration * Time.deltaTime);
+        activeRoll = 0f; //Mathf.Lerp(activeRoll, Input.GetAxisRaw("Roll"), rollAcceleration * Time.deltaTime);
         activeYaw = Mathf.Lerp(activeYaw, Input.GetAxisRaw("Yaw"), rollAcceleration * Time.deltaTime);
         transform.Rotate(-activePitch * pitchSpeed * Time.deltaTime,
                          activeYaw * yawSpeed * Time.deltaTime,
                          activeRoll * rollSpeed * Time.deltaTime, Space.Self);
+
+        activeCameraPitch = Mathf.Lerp(activePitch, Input.GetAxisRaw("Pitch"), rollAcceleration * Time.deltaTime);
+        followTarget.transform.Rotate(-activeCameraPitch * pitchSpeed * Time.deltaTime, 0f, 0f);
     }
 
     void LinearMovement()
