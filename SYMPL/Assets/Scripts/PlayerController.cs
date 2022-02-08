@@ -23,9 +23,7 @@ public class PlayerController : MonoBehaviour
     [Tooltip("When boos is active")] public float boostFocalLength;
     [Header("References")]
     public CinemachineVirtualCamera vcam;
-    public GameObject laser;
     public GameObject followTarget;
-    public ParticleSystem laserParticles;
 
     private float activeForward, activeSlide, activeRoll, activePitch, activeCameraPitch, activeYaw;
 
@@ -34,28 +32,8 @@ public class PlayerController : MonoBehaviour
         LinearMovement();
         AngularMovement();
         boostIsActive();
-        Shoot();
-    }
-
-    void Shoot()
-    {
-        if (Input.GetButton("Shoot"))
-        {
-            SetActiveLaser(true);
-        }
-        else
-        {
-            SetActiveLaser(false);
-        }
-    }
-
-    void SetActiveLaser(bool isActive)
-    {
-       var emissionModule = laserParticles.emission;
-       emissionModule.enabled = isActive;
     }
     
-
     void AngularMovement()
     {
         activePitch = 0f; //Mathf.Lerp(activePitch, Input.GetAxisRaw("Pitch"), rollAcceleration * Time.deltaTime);
@@ -104,5 +82,13 @@ public class PlayerController : MonoBehaviour
     private float FocalLengthToFOV(float focalLength)
         {
             return Mathf.Rad2Deg * 2.0f * Mathf.Atan(vcam.m_Lens.SensorSize.y * 0.5f / focalLength);
+        }
+    
+     void OnCollisionEnter(Collision other) 
+        {
+            if (other.gameObject.tag == "Column")
+            {
+                Debug.Log("ouch!");
+            }
         }
 }
