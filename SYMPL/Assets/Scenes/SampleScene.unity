@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 10437.09, g: 10271.035, b: 12020.344, a: 1}
+  m_IndirectSpecularColor: {r: 10437.09, g: 10267.551, b: 11539.695, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -748,7 +748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6043bde05a7fc4cba197d06915c1e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damping: {x: 0.5, y: 0.5, z: 0.5}
+  Damping: {x: 1, y: 1, z: 0}
   ShoulderOffset: {x: 0.5, y: 15, z: 0}
   VerticalArmLength: 28.51
   CameraSide: 1
@@ -1247,7 +1247,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1180
+  m_Name: pb_Mesh22308
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6023,7 +6023,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22388
+  m_Name: pb_Mesh22398
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6195,6 +6195,7 @@ GameObject:
   - component: {fileID: 1584377925}
   - component: {fileID: 1584377924}
   - component: {fileID: 1584377923}
+  - component: {fileID: 1584377929}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -6534,6 +6535,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1584377929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584377922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada6c182040c1d8498872e2cdb3043a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1702393539
 Mesh:
   m_ObjectHideFlags: 0
@@ -6735,6 +6748,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3815391023838195012, guid: 3df5ea0cc50b187459b33c0f623d7ce2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815391023838195012, guid: 3df5ea0cc50b187459b33c0f623d7ce2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815391023838195012, guid: 3df5ea0cc50b187459b33c0f623d7ce2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 4746826854506561748, guid: 3df5ea0cc50b187459b33c0f623d7ce2, type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
@@ -6764,8 +6789,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6779544834303067680, guid: 3df5ea0cc50b187459b33c0f623d7ce2, type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779544834303067680, guid: 3df5ea0cc50b187459b33c0f623d7ce2, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779544834303067680, guid: 3df5ea0cc50b187459b33c0f623d7ce2, type: 3}
       propertyPath: TrailModule.lifetime.scalar
       value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779544834303067680, guid: 3df5ea0cc50b187459b33c0f623d7ce2, type: 3}
+      propertyPath: CollisionModule.minKillSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6779544834303067680, guid: 3df5ea0cc50b187459b33c0f623d7ce2, type: 3}
       propertyPath: TrailModule.sizeAffectsWidth
@@ -6778,6 +6815,10 @@ PrefabInstance:
     - target: {fileID: 6779544834303067680, guid: 3df5ea0cc50b187459b33c0f623d7ce2, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779544834303067680, guid: 3df5ea0cc50b187459b33c0f623d7ce2, type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6779544834303067680, guid: 3df5ea0cc50b187459b33c0f623d7ce2, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
@@ -6817,7 +6858,7 @@ PrefabInstance:
       objectReference: {fileID: 2107112346}
     - target: {fileID: 7286450154987608391, guid: 3df5ea0cc50b187459b33c0f623d7ce2, type: 3}
       propertyPath: pitchSpeed
-      value: 500
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7286450154987608391, guid: 3df5ea0cc50b187459b33c0f623d7ce2, type: 3}
       propertyPath: followTarget

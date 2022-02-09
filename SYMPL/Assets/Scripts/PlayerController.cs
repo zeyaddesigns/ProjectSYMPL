@@ -36,15 +36,15 @@ public class PlayerController : MonoBehaviour
     
     void AngularMovement()
     {
-        activePitch = 0f; //Mathf.Lerp(activePitch, Input.GetAxisRaw("Pitch"), rollAcceleration * Time.deltaTime);
-        activeRoll = 0f; //Mathf.Lerp(activeRoll, Input.GetAxisRaw("Roll"), rollAcceleration * Time.deltaTime);
+        activePitch = Mathf.Lerp(activePitch, Input.GetAxisRaw("Pitch"), rollAcceleration * Time.deltaTime);
+        activeRoll = Mathf.Lerp(activeRoll, Input.GetAxisRaw("Roll"), rollAcceleration * Time.deltaTime);
         activeYaw = Mathf.Lerp(activeYaw, Input.GetAxisRaw("Yaw"), rollAcceleration * Time.deltaTime);
         transform.Rotate(-activePitch * pitchSpeed * Time.deltaTime,
                          activeYaw * yawSpeed * Time.deltaTime,
                          activeRoll * rollSpeed * Time.deltaTime, Space.Self);
 
-        activeCameraPitch = Mathf.Lerp(activePitch, Input.GetAxisRaw("Pitch"), rollAcceleration * Time.deltaTime);
-        followTarget.transform.Rotate(-activeCameraPitch * pitchSpeed * Time.deltaTime, 0f, 0f);
+        //activeCameraPitch = Mathf.Lerp(activePitch, Input.GetAxisRaw("Pitch"), rollAcceleration * Time.deltaTime);
+        //followTarget.transform.Rotate(-activeCameraPitch * pitchSpeed * Time.deltaTime, 0f, 0f);
     }
 
     void LinearMovement()
