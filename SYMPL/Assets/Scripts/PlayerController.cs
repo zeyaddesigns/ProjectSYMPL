@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public float forwardAcceleration;
     public float slideSpeed;
     public float slideAcceleration;
+    public float hoverSpeed;
+    public float hoverAcceleration;
     public float boostSpeed;
     [Header("Angular Movement")]
     public float pitchSpeed;
@@ -25,7 +27,7 @@ public class PlayerController : MonoBehaviour
     public CinemachineVirtualCamera vcam;
     public GameObject followTarget;
 
-    private float activeForward, activeSlide, activeRoll, activePitch, activeCameraPitch, activeYaw;
+    private float activeForward, activeSlide, activeHover, activeRoll, activePitch, activeCameraPitch, activeYaw;
 
     void Update()
     {
@@ -51,8 +53,10 @@ public class PlayerController : MonoBehaviour
     {
         activeForward = Mathf.Lerp(activeForward, Input.GetAxisRaw("Forward") * forwardSpeed, forwardAcceleration * Time.deltaTime);
         activeSlide = Mathf.Lerp(activeSlide, Input.GetAxisRaw("Slide") * slideSpeed, slideAcceleration * Time.deltaTime);
+        activeHover = Mathf.Lerp(activeHover, Input.GetAxisRaw("Hover") * hoverSpeed, hoverAcceleration * Time.deltaTime);
         transform.position += transform.forward * activeForward * Time.deltaTime;
         transform.position += transform.right * activeSlide * Time.deltaTime;
+        transform.position += transform.up * activeHover * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.W))
         {
