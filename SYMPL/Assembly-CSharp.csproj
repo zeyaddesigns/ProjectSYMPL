@@ -37,14 +37,16 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\WinCube.cs" />
      <Compile Include="Assets\Scripts\RayTest.cs" />
-     <Compile Include="Assets\Scripts\whenShot.cs" />
      <Compile Include="Assets\Scripts\Other\ShipController.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\Other\PlayerControls.cs" />
      <Compile Include="Assets\Scripts\ShootSystem.cs" />
      <Compile Include="Assets\Scripts\Other\GamepadMovement.cs" />
-     <Compile Include="Assets\Scripts\WinCube.cs" />
+     <Compile Include="Assets\Scripts\Spike.cs" />
+     <Compile Include="Assets\Scripts\Pillar.cs" />
+     <Compile Include="Assets\Scripts\Shootable.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

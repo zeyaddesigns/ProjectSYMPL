@@ -20,7 +20,6 @@ public class ShootSystem : MonoBehaviour
         if (Physics.Raycast(ray, out hitInfo, range))
         {
             Debug.DrawLine(ray.origin, hitInfo.point, Color.red);
-            Debug.Log(hitInfo.transform.name);
         }
         else
         {
