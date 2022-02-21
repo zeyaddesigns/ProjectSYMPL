@@ -4,36 +4,26 @@ using UnityEngine;
 
 public class ShootSystem : MonoBehaviour
 {
-    public float range = 10000f;
     public ParticleSystem laserParticles;
+    public static bool isShooting = false;
 
     void Update()
     {
         Shoot();
-        test();
-    }
-
-    void test()
-    {
-        Ray ray = new Ray(transform.position, transform.forward);
-        RaycastHit hitInfo;
-        if (Physics.Raycast(ray, out hitInfo, range))
-        {
-            Debug.DrawLine(ray.origin, hitInfo.point, Color.red);
-        }
-        else
-        {
-            Debug.DrawLine(ray.origin, ray.origin + ray.direction * range, Color.green);
-        }
-
     }
 
     void Shoot()
     {      
         if (Input.GetButton("Shoot"))
-        {SetActiveLaser(true);}
+        { 
+            SetActiveLaser(true);
+            isShooting = true;
+        }
         else
-        {SetActiveLaser(false);}
+        {
+            SetActiveLaser(false);
+            isShooting = false;
+        }
     }
 
     void SetActiveLaser(bool isActive)
