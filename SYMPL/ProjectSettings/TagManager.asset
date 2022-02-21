@@ -8,6 +8,7 @@ TagManager:
   - Column
   - Up
   - Down
+  - Ball
   layers:
   - Default
   - TransparentFX
