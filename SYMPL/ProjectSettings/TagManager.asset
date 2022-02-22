@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Rocks
   - Column
+  - Up
+  - Down
+  - Ball
+  - YellowBall
   layers:
   - Default
   - TransparentFX
