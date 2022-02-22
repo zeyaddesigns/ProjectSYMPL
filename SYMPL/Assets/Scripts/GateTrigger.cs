@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GateTrigger : MonoBehaviour
 {
     public GameObject redLight;
     public GameObject greenLight;
-
 
     private void OnTriggerEnter(Collider other) 
     {

@@ -1,10 +1,10 @@
-using System.Collections;
+         using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WhenShot : MonoBehaviour
 {
-    public float force = 10000f;
+    public float force = 40000f;
     Rigidbody rb; 
     public void OnParticleCollision(GameObject other) 
     {
