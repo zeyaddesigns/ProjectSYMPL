@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     public float slideAcceleration;
     public float hoverSpeed;
     public float hoverAcceleration;
-    public float boostSpeed;
     [Header("Angular Movement")]
     public float pitchSpeed;
     public float rollSpeed;
@@ -44,9 +43,6 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(-activePitch * pitchSpeed * Time.deltaTime,
                          activeYaw * yawSpeed * Time.deltaTime,
                          activeRoll * rollSpeed * Time.deltaTime, Space.Self);
-
-        //activeCameraPitch = Mathf.Lerp(activePitch, Input.GetAxisRaw("Pitch"), rollAcceleration * Time.deltaTime);
-        //followTarget.transform.Rotate(-activeCameraPitch * pitchSpeed * Time.deltaTime, 0f, 0f);
     }
 
     void LinearMovement()
@@ -72,7 +68,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            activeForward += boostSpeed * Time.deltaTime;
+            activeForward += forwardSpeed * forwardAcceleration * 2f * Time.deltaTime;
             vcam.m_Lens.FieldOfView = Mathf.Lerp(vcam.m_Lens.FieldOfView, FocalLengthToFOV(boostFocalLength), Time.deltaTime);
             return true;
         }

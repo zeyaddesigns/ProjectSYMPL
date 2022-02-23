@@ -45,10 +45,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5917081927091711436}
     - target: {fileID: 81169292106752820, guid: 16b690e77b3f9db4e816920d3eb06bbb, type: 3}
-      propertyPath: goalsText
-      value: 
-      objectReference: {fileID: 86017260233656463, guid: 656131006a896a341aa60c0a4a4dab4f, type: 3}
-    - target: {fileID: 81169292106752820, guid: 16b690e77b3f9db4e816920d3eb06bbb, type: 3}
       propertyPath: greenLight
       value: 
       objectReference: {fileID: 5917081928281056530}
@@ -56,13 +52,17 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 235034670402720063, guid: 16b690e77b3f9db4e816920d3eb06bbb, type: 3}
-      propertyPath: m_SelectedVertices.Array.size
-      value: 0
+    - target: {fileID: 3785241694523080877, guid: 16b690e77b3f9db4e816920d3eb06bbb, type: 3}
+      propertyPath: m_Size.x
+      value: 834.5993
       objectReference: {fileID: 0}
-    - target: {fileID: 235034670402720063, guid: 16b690e77b3f9db4e816920d3eb06bbb, type: 3}
-      propertyPath: m_SelectedVertices.Array.data[0]
-      value: 70
+    - target: {fileID: 3785241694523080877, guid: 16b690e77b3f9db4e816920d3eb06bbb, type: 3}
+      propertyPath: m_Center.x
+      value: -496.78674
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785241694523080877, guid: 16b690e77b3f9db4e816920d3eb06bbb, type: 3}
+      propertyPath: m_Center.z
+      value: -1.2829804
       objectReference: {fileID: 0}
     - target: {fileID: 4237129004898590043, guid: 16b690e77b3f9db4e816920d3eb06bbb, type: 3}
       propertyPath: m_Name
