@@ -9,13 +9,13 @@ public class KeyInput : MonoBehaviour
     
     void Update() 
     {
-        if (Input.GetKey(KeyCode.Z) && !DownArrow.isGravityReversed)
+        if (Input.GetKeyDown(KeyCode.Z) && !DownArrow.isGravityReversed && GateTrigger.goalScore >= 2)
         {
             downArrow.SetActive(false);
             upArrow.SetActive(true);
             DownArrow.isGravityReversed = true;
         }
-        else if (Input.GetKey(KeyCode.Z) && DownArrow.isGravityReversed)
+        else if (Input.GetKeyDown(KeyCode.Z) && DownArrow.isGravityReversed)
         {
             upArrow.SetActive(false);
             downArrow.SetActive(true);

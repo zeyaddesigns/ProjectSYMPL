@@ -44,12 +44,13 @@
      <Compile Include="Assets\Scripts\GravityController.cs" />
      <Compile Include="Assets\Scripts\Archive\PlayerControls.cs" />
      <Compile Include="Assets\Scripts\ShootSystem.cs" />
+     <Compile Include="Assets\Scripts\KeyInput.cs" />
      <Compile Include="Assets\Scripts\Archive\Enemy.cs" />
      <Compile Include="Assets\Scripts\DownArrow.cs" />
      <Compile Include="Assets\Scripts\GateTrigger.cs" />
      <Compile Include="Assets\Scripts\Archive\GamepadMovement.cs" />
      <Compile Include="Assets\Scripts\UpArrow.cs" />
-     <Compile Include="Assets\Scripts\KeyInput.cs" />
+     <Compile Include="Assets\Scripts\WinState.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

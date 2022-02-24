@@ -11,9 +11,11 @@ public class DownArrow : MonoBehaviour
 
     private void OnParticleCollision(GameObject other) 
     {
-        downArrow.SetActive(false);
-        upArrow.SetActive(true);
-        isGravityReversed = true;
-        Debug.Log("Gravity Revered = " + isGravityReversed);
+        if (!isGravityReversed && GateTrigger.goalScore >= 2)
+        {
+            downArrow.SetActive(false);
+            upArrow.SetActive(true);
+            isGravityReversed = true;
+        }
     }
 }

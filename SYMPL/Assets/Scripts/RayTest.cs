@@ -16,6 +16,7 @@ public class RayTest : MonoBehaviour
         if (Physics.Raycast(ray, out hitInfo, range))
         {
             Debug.DrawLine(ray.origin, hitInfo.point, Color.red);
+            Debug.Log("I can see: " + hitInfo.transform.name);
         }
         else
         {

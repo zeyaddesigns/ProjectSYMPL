@@ -9,7 +9,7 @@ public class UpArrow : MonoBehaviour
    
     private void OnParticleCollision(GameObject other) 
     {
-        if (DownArrow.isGravityReversed==true)
+        if (DownArrow.isGravityReversed==true && GateTrigger.goalScore >= 2)
         {
             upArrow.SetActive(false);
             downArrow.SetActive(true);

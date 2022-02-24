@@ -7,14 +7,16 @@ public class GateTrigger : MonoBehaviour
 {
     public GameObject redLight;
     public GameObject greenLight;
+    public static int goalScore;
 
     private void OnTriggerEnter(Collider other) 
     {
         if (other.tag == "Ball")
-        {
-            Debug.Log("GOAL!");
+        { 
             redLight.SetActive(false);
             greenLight.SetActive(true);
+            goalScore++;
+            Debug.Log("Goal Count: " + goalScore);
         }    
     }
 }
